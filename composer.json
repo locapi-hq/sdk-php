@@ -1,5 +1,5 @@
 {
-    "name": "locapi/locapi-php",
+    "name": "locapi/sdk",
     "description": "PHP SDK for LocAPI geolocation service",
     "type": "library",
     "license": "MIT",
