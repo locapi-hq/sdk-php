@@ -1,0 +1,28 @@
+{
+    "name": "locapi/locapi-php",
+    "description": "PHP SDK for LocAPI geolocation service",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "php-http/discovery": "^1.19"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5",
+        "guzzlehttp/guzzle": "^7.8",
+        "guzzlehttp/psr7": "^2.6",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "LocApi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LocApi\\Tests\\": "tests/"
+        }
+    }
+}
