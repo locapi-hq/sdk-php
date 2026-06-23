@@ -46,7 +46,7 @@ class LocApiTest extends TestCase
         $mockRequest->expects($this->exactly(2))
             ->method('withHeader')
             ->willReturnMap([
-                ['Authorization', 'Bearer test_key', $mockRequest],
+                ['Locapi-Api-Key', 'test_key', $mockRequest],
                 ['Accept', 'application/json', $mockRequest]
             ]);
 
@@ -92,7 +92,7 @@ class LocApiTest extends TestCase
 
         $sdk = new LocApi(
             'bad_key',
-            'https://api.locapi.dev',
+            'https://locapi.dev',
             $this->mockClient,
             $this->mockRequestFactory,
             $this->mockStreamFactory
@@ -124,7 +124,7 @@ class LocApiTest extends TestCase
 
         $sdk = new LocApi(
             'test_key',
-            'https://api.locapi.dev',
+            'https://locapi.dev',
             $this->mockClient,
             $this->mockRequestFactory,
             $this->mockStreamFactory

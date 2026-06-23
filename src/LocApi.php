@@ -36,7 +36,7 @@ class LocApi
         ?StreamFactoryInterface $streamFactory = null
     ) {
         $this->apiKey = $apiKey;
-        $this->baseUrl = $baseUrl ?: 'https://api.locapi.dev';
+        $this->baseUrl = $baseUrl ?: 'https://locapi.dev';
         
         $this->httpClient = $httpClient ?: Psr18ClientDiscovery::find();
         $this->requestFactory = $requestFactory ?: Psr17FactoryDiscovery::findRequestFactory();

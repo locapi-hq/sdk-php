@@ -43,7 +43,7 @@ abstract class AbstractResource
 
         $request = $this->requestFactory->createRequest($method, $url);
         $request = $request
-            ->withHeader('Authorization', 'Bearer ' . $this->apiKey)
+            ->withHeader('Locapi-Api-Key', $this->apiKey)
             ->withHeader('Accept', 'application/json');
 
         if ($bodyParams !== null) {
