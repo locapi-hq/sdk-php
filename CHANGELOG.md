@@ -1,0 +1,21 @@
+# locapi/sdk (PHP)
+
+## 0.2.0
+
+### Minor Changes
+
+- feat(sdk): add Address, Health, and Stats resources
+  - Added `AddressResource` (`$client->addresses()->search()`, `autocomplete()`, `reverse()`, `ipWhois()`, `ipGeolocation()`)
+  - Added `HealthResource` (`$client->health()->live()`, `ready()`, `status()`)
+  - Added `StatsResource` (`$client->stats()->overview()`)
+  - Added support for alternative names in `LocationResource`
+  - Expanded unit and integration test suites
+
+## 0.1.0
+
+### Minor Changes
+
+- Initial release of the official LocAPI PHP SDK
+  - Fully decoupled architecture conforming to PSR-18 (HTTP Client) and PSR-17 (HTTP Factory)
+  - Auto-discovery of HTTP clients via `php-http/discovery`
+  - Resources for Locations, Postal Codes, Countries, Boundaries, Timezones, and Distance Matrices

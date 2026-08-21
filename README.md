@@ -2,7 +2,7 @@
 
 The official PHP client library for **LocAPI** — a modern, high-performance geolocation and geosearch service.
 
-This SDK is Decoupled, conforming to the **PSR-18 (HTTP Client)** and **PSR-17 (HTTP Factory)** specifications. It uses auto-discovery to detect your installed HTTP client (like Guzzle or Symfony HTTP Client), meaning it has zero package lock-in.
+This SDK is decoupled, conforming to the **PSR-18 (HTTP Client)** and **PSR-17 (HTTP Factory)** specifications. It uses auto-discovery to detect your installed HTTP client (like Guzzle or Symfony HTTP Client), meaning it has zero package lock-in.
 
 ---
 
@@ -84,7 +84,7 @@ try {
 ```
 
 ### 2. High-Performance Geo-Search (Meilisearch)
-Search using geo coordinates:
+Search using geo coordinates and filters:
 
 ```php
 $response = $locapi->locations()->searchGeo([
@@ -95,22 +95,69 @@ $response = $locapi->locations()->searchGeo([
 ]);
 ```
 
-### 3. Distance Matrix calculation
-Compute Travel distances and durations between origins and destinations:
+### 3. Street-Level Address Search & Autocomplete
+Search physical addresses and auto-suggest:
+
+```php
+// Full-text address search
+$addresses = $locapi->addresses()->search([
+    'q' => 'Václavské náměstí',
+    'countryCode' => 'CZ',
+    'limit' => 5
+]);
+
+// Real-time address autocomplete
+$suggestions = $locapi->addresses()->autocomplete([
+    'q' => 'Václav',
+    'limit' => 5,
+    'highlight' => true
+]);
+
+// Reverse geocode to nearest address
+$nearestAddress = $locapi->addresses()->reverseGeocode(50.0813, 14.4267, 300);
+```
+
+### 4. Bulk Reverse Geocoding
+Resolve nearest named locations for an array of coordinate points in a single call:
+
+```php
+$results = $locapi->locations()->bulkLookups([
+    ['lat' => 50.0755, 'lon' => 14.4378],
+    ['lat' => 48.8566, 'lon' => 2.3522],
+]);
+```
+
+### 5. Postal Code Lookup
+Search postal codes:
+
+```php
+$postalCodes = $locapi->postalCodes()->search('11000', 'CZ');
+```
+
+### 6. Distance Matrix Calculation
+Compute travel distances and durations between origins and destinations:
 
 ```php
 $origins = [['lat' => 50.0755, 'lon' => 14.4378]];
 $destinations = [['lat' => 49.1951, 'lon' => 16.6068]];
 
-$matrix = $locapi->distanceMatrices()->create($origins, $destinations, 90);
+$matrix = $locapi->distanceMatrices()->create($origins, $destinations, speedKmh: 90);
 ```
 
-### 4. Timezone Lookup
+### 7. Timezone Lookup
 Resolve timezone details for a coordinate:
 
 ```php
 $timezone = $locapi->timezones()->get(50.0755, 14.4378);
 echo $timezone['data']['timezone']; // "Europe/Prague"
+```
+
+### 8. Health & System Statistics
+Monitor backend health and retrieve public performance statistics:
+
+```php
+$health = $locapi->health()->detailed();
+$stats = $locapi->stats()->getPublicStats('7d');
 ```
 
 ---

@@ -16,6 +16,9 @@ use LocApi\Resources\PostalCodeResource;
 use LocApi\Resources\DistanceMatrixResource;
 use LocApi\Resources\TimezoneResource;
 use LocApi\Resources\IpAddressResource;
+use LocApi\Resources\AddressResource;
+use LocApi\Resources\HealthResource;
+use LocApi\Resources\StatsResource;
 
 class LocApi
 {
@@ -58,6 +61,11 @@ class LocApi
         return $this->getResource(FeatureResource::class);
     }
 
+    public function addresses(): AddressResource
+    {
+        return $this->getResource(AddressResource::class);
+    }
+
     public function postalCodes(): PostalCodeResource
     {
         return $this->getResource(PostalCodeResource::class);
@@ -76,6 +84,16 @@ class LocApi
     public function ipAddresses(): IpAddressResource
     {
         return $this->getResource(IpAddressResource::class);
+    }
+
+    public function health(): HealthResource
+    {
+        return $this->getResource(HealthResource::class);
+    }
+
+    public function stats(): StatsResource
+    {
+        return $this->getResource(StatsResource::class);
     }
 
     /**
