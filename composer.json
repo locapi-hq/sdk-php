@@ -24,5 +24,11 @@
         "psr-4": {
             "LocApi\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "example:basic": "php examples/01-basic-search/index.php",
+        "example:geo": "php examples/02-geo-and-addresses/index.php",
+        "example:travel": "php examples/03-travel-and-ip/index.php"
     }
 }

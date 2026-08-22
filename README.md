@@ -187,3 +187,34 @@ try {
     print_r($e->getErrors()); // Validation issues list
 }
 ```
+
+---
+
+## Runnable Examples
+
+The package includes ready-to-run examples in the [`examples/`](./examples) directory:
+
+- **`01-basic-search`**: Basic search, single lookup by ID, alternative names, and exception handling.
+- **`02-geo-and-addresses`**: Meilisearch geo-radius, nearby, reverse geocode, autocomplete, street address search, and GeoJSON boundaries.
+- **`03-travel-and-ip`**: Distance matrix, bulk coordinate lookups, timezone lookup, IP geolocation, WHOIS, postal codes, and health metrics.
+
+### Running Examples
+
+1. Copy and configure the environment:
+   ```bash
+   cp examples/.env.example examples/.env
+   # Edit examples/.env with your LOCAPI_API_KEY
+   ```
+2. Run any example using Composer scripts:
+   ```bash
+   composer example:basic
+   composer example:geo
+   composer example:travel
+   ```
+   Or directly via PHP CLI:
+   ```bash
+   php examples/01-basic-search/index.php
+   ```
+
+See the [Examples README](./examples/README.md) for full details.
+
