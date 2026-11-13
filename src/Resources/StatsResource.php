@@ -15,6 +15,6 @@ class StatsResource extends AbstractResource
     public function getPublicStats(?string $period = '24h'): array
     {
         $params = $period !== null ? ['period' => $period] : [];
-        return $this->request('GET', '/v1/public/stats', $params);
+        return $this->request('GET', '/api/v1/public/stats', $params);
     }
 }

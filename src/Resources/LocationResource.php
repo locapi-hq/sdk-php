@@ -14,7 +14,7 @@ class LocationResource extends AbstractResource
      */
     public function search(array $params = []): array
     {
-        return $this->request('GET', '/v1/locations', $params);
+        return $this->request('GET', '/api/v1/locations', $params);
     }
 
     /**
@@ -25,7 +25,7 @@ class LocationResource extends AbstractResource
      */
     public function get(int $geonameid): array
     {
-        return $this->request('GET', "/v1/locations/{$geonameid}");
+        return $this->request('GET', "/api/v1/locations/{$geonameid}");
     }
 
     /**
@@ -36,7 +36,7 @@ class LocationResource extends AbstractResource
      */
     public function searchGeo(array $params = []): array
     {
-        return $this->request('GET', '/v1/locations/geo-search', $params);
+        return $this->request('GET', '/api/v1/locations/geo-search', $params);
     }
 
     /**
@@ -47,7 +47,7 @@ class LocationResource extends AbstractResource
      */
     public function searchNearby(array $params): array
     {
-        return $this->request('GET', '/v1/locations/nearby', $params);
+        return $this->request('GET', '/api/v1/locations/nearby', $params);
     }
 
     /**
@@ -58,7 +58,7 @@ class LocationResource extends AbstractResource
      */
     public function reverseGeocode(array $params): array
     {
-        return $this->request('GET', '/v1/locations/reverse-geocode', $params);
+        return $this->request('GET', '/api/v1/locations/reverse-geocode', $params);
     }
 
     /**
@@ -69,7 +69,7 @@ class LocationResource extends AbstractResource
      */
     public function autocomplete(array $params): array
     {
-        return $this->request('GET', '/v1/locations/autocomplete', $params);
+        return $this->request('GET', '/api/v1/locations/autocomplete', $params);
     }
 
     /**
@@ -80,7 +80,7 @@ class LocationResource extends AbstractResource
      */
     public function bulkLookups(array $locations): array
     {
-        return $this->request('POST', '/v1/locations/bulk-lookups', [], [
+        return $this->request('POST', '/api/v1/locations/bulk-lookups', [], [
             'locations' => $locations
         ]);
     }
@@ -93,7 +93,7 @@ class LocationResource extends AbstractResource
      */
     public function boundaries(int $geonameid): array
     {
-        return $this->request('GET', "/v1/locations/{$geonameid}/boundaries");
+        return $this->request('GET', "/api/v1/locations/{$geonameid}/boundaries");
     }
 
     /**
@@ -105,6 +105,6 @@ class LocationResource extends AbstractResource
      */
     public function alternativeNames(int $geonameid, array $params = []): array
     {
-        return $this->request('GET', "/v1/locations/{$geonameid}/alternative-names", $params);
+        return $this->request('GET', "/api/v1/locations/{$geonameid}/alternative-names", $params);
     }
 }

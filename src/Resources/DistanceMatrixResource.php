@@ -28,6 +28,6 @@ class DistanceMatrixResource extends AbstractResource
             $body['speedMph'] = $speedMph;
         }
 
-        return $this->request('POST', '/v1/distance-matrices', [], $body);
+        return $this->request('POST', '/api/v1/distance-matrices', [], $body);
     }
 }

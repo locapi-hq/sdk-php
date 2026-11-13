@@ -13,7 +13,7 @@ class HealthResource extends AbstractResource
      */
     public function check(): array
     {
-        return $this->request('GET', '/health');
+        return $this->request('GET', '/api/health');
     }
 
     /**
@@ -23,7 +23,7 @@ class HealthResource extends AbstractResource
      */
     public function detailed(): array
     {
-        return $this->request('GET', '/health/detailed');
+        return $this->request('GET', '/api/health/detailed');
     }
 
     /**
@@ -33,6 +33,6 @@ class HealthResource extends AbstractResource
      */
     public function ready(): array
     {
-        return $this->request('GET', '/health/ready');
+        return $this->request('GET', '/api/health/ready');
     }
 }

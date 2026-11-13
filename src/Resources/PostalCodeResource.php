@@ -25,6 +25,6 @@ class PostalCodeResource extends AbstractResource
             ], $options);
         }
 
-        return $this->request('GET', '/v1/postal-codes', $params);
+        return $this->request('GET', '/api/v1/postal-codes', $params);
     }
 }

@@ -41,7 +41,7 @@ use LocApi\LocApi;
 // 1. Basic initialization (auto-detects HTTP client and factories)
 $locapi = new LocApi('your_api_key_here');
 
-// 2. Custom Base URL (e.g., self-hosted or local testing environment)
+// 2. Custom origin (self-hosted or local). The client appends /api/v1 and /api/health.
 $locapi = new LocApi('your_api_key_here', 'http://localhost:8000');
 
 // 3. Advanced: Explicitly inject custom PSR-18 client & factories

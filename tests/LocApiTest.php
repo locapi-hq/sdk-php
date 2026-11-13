@@ -49,7 +49,7 @@ class LocApiTest extends TestCase
 
         $this->mockRequestFactory->expects($this->once())
             ->method('createRequest')
-            ->with('GET', 'http://localhost:8000/v1/locations?q=Prague')
+            ->with('GET', 'http://localhost:8000/api/v1/locations?q=Prague')
             ->willReturn($mockRequest);
 
         $mockRequest->expects($this->exactly(2))
@@ -139,7 +139,7 @@ class LocApiTest extends TestCase
 
         $this->mockRequestFactory->expects($this->once())
             ->method('createRequest')
-            ->with('POST', 'http://localhost:8000/v1/locations/bulk-lookups')
+            ->with('POST', 'http://localhost:8000/api/v1/locations/bulk-lookups')
             ->willReturn($mockRequest);
 
         $this->mockStreamFactory->expects($this->once())
@@ -175,7 +175,7 @@ class LocApiTest extends TestCase
 
         $this->mockRequestFactory->expects($this->once())
             ->method('createRequest')
-            ->with('GET', 'http://localhost:8000/v1/addresses?q=Main+Street&countryCode=CZ')
+            ->with('GET', 'http://localhost:8000/api/v1/addresses?q=Main+Street&countryCode=CZ')
             ->willReturn($mockRequest);
 
         $mockRequest->method('withHeader')->willReturn($mockRequest);
@@ -201,7 +201,7 @@ class LocApiTest extends TestCase
 
         $this->mockRequestFactory->expects($this->once())
             ->method('createRequest')
-            ->with('GET', 'http://localhost:8000/v1/postal-codes?postalCode=11000&countryCode=CZ&limit=10')
+            ->with('GET', 'http://localhost:8000/api/v1/postal-codes?postalCode=11000&countryCode=CZ&limit=10')
             ->willReturn($mockRequest);
 
         $mockRequest->method('withHeader')->willReturn($mockRequest);
@@ -227,7 +227,7 @@ class LocApiTest extends TestCase
 
         $this->mockRequestFactory->expects($this->once())
             ->method('createRequest')
-            ->with('GET', 'http://localhost:8000/health/detailed')
+            ->with('GET', 'http://localhost:8000/api/health/detailed')
             ->willReturn($mockRequest);
 
         $mockRequest->method('withHeader')->willReturn($mockRequest);

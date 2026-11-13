@@ -14,7 +14,7 @@ class AddressResource extends AbstractResource
      */
     public function search(array $params): array
     {
-        return $this->request('GET', '/v1/addresses', $params);
+        return $this->request('GET', '/api/v1/addresses', $params);
     }
 
     /**
@@ -25,7 +25,7 @@ class AddressResource extends AbstractResource
      */
     public function autocomplete(array $params): array
     {
-        return $this->request('GET', '/v1/addresses/autocomplete', $params);
+        return $this->request('GET', '/api/v1/addresses/autocomplete', $params);
     }
 
     /**
@@ -50,7 +50,7 @@ class AddressResource extends AbstractResource
             }
         }
 
-        return $this->request('GET', '/v1/addresses/reverse-geocode', $params);
+        return $this->request('GET', '/api/v1/addresses/reverse-geocode', $params);
     }
 
     /**
@@ -61,6 +61,6 @@ class AddressResource extends AbstractResource
      */
     public function get(int $id): array
     {
-        return $this->request('GET', "/v1/addresses/{$id}");
+        return $this->request('GET', "/api/v1/addresses/{$id}");
     }
 }

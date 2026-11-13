@@ -8,7 +8,7 @@ class TimezoneResource extends AbstractResource
 {
     public function get(float $lat, float $lon): array
     {
-        return $this->request('GET', '/v1/timezones', [
+        return $this->request('GET', '/api/v1/timezones', [
             'lat' => $lat,
             'lon' => $lon
         ]);
