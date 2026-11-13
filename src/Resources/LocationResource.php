@@ -9,7 +9,7 @@ class LocationResource extends AbstractResource
     /**
      * Search locations using standard database full-text search.
      *
-     * @param array{q: string, country?: string, countryCode?: string, limit?: int, page?: int} $params
+     * @param array{q: string, country?: string, countryCode?: string, limit?: int} $params
      * @return array<string, mixed>
      */
     public function search(array $params = []): array
